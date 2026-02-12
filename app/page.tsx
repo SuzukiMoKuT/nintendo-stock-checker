@@ -34,7 +34,7 @@ export default async function Home() {
   const ma75 = calculateMA(closes, 75);
 
   const current = closes[closes.length - 1];
-  const currentMA75 = ma75[ma75.length - 1];
+  const currentMA75 = ma75[ma75.length - 1] ?? current;
 
   let verdict = "様子見";
   if (current < currentMA75 * 0.95) verdict = "買い寄り";
